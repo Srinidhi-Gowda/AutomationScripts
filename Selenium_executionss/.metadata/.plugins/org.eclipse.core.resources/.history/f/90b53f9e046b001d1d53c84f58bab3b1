@@ -1,0 +1,30 @@
+package firstGen;
+
+import java.sql.Driver;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+public class ForSouledStore extends Generic
+{
+	@Test
+	public void test01() throws InterruptedException
+	{
+		driver.findElement(By.xpath("//img[@alt='Hoodies & Jackets']")).click();
+		driver.findElement(By.xpath("//span[.='Careers']")).click();
+		driver.findElement(By.xpath("//a[@aria-label='Twitter']")).click();
+		Thread.sleep(5000);
+		Set<String> allwin = driver.getWindowHandles();
+		for(String wh:allwin)
+		{
+			driver.switchTo().window(wh);
+			String tit = driver.getTitle();
+			String url = driver.getCurrentUrl();
+			System.out.println("title of the page is "+tit+" and the url is "+url);
+		}
+		
+	}
+}

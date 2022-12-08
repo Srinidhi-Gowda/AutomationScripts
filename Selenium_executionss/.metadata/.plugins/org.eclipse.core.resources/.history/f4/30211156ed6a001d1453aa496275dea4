@@ -1,0 +1,18 @@
+package firstGen;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+public class Redbus01 extends Generic
+{
+	@Test
+	public void trialRun()
+	{
+		driver.findElement(By.xpath("//input[@data-message='Please enter a source city']")).sendKeys("banglore");
+		driver.findElement(By.xpath("//input[@data-message='Please enter a destination city']")).sendKeys("Sringeri");
+		driver.findElement(By.xpath("//input[@id='onward_cal']")).click();
+		driver.findElement(By.xpath("//td[.='28']")).click();
+		driver.findElement(By.xpath("//button[@id='search_btn']")).click();
+	}
+}
+	

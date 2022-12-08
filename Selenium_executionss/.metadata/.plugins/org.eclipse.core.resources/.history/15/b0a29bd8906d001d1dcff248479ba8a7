@@ -1,0 +1,67 @@
+package pomScripts;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class SouledStorePOM 
+{
+	//declaration of ele
+	@FindBy(xpath = "//img[@alt='Hoodies & Jackets']")
+	private WebElement Hoodies;
+	
+	@FindBy(xpath = "//img[@alt='Sweatshirts']") private WebElement Sweatshirts;
+	
+	@FindBy(xpath = "//img[@alt='T-shirts']") private WebElement tshirt;
+	
+	@FindBy(xpath = "//span[.='Returns & Refunds']") private WebElement retandreflink;
+	
+	@FindBy(xpath = ("//a[@aria-label='Twitter']")) private WebElement twitter;
+	
+	@FindBy(xpath = "//span[@class='nav-link noTdropdown']") private WebElement tophome;
+	
+	@FindBy(xpath = "//span[.='\r\n"
+			+ "                  Register\r\n"
+			+ "                ']") private WebElement registerbtn;
+	
+	@FindBy(xpath="//input[@placeholder='First Name *']") private WebElement FirstnameTxtfield;
+	
+	//initialization
+	public SouledStorePOM(WebDriver driver)
+	{
+		PageFactory.initElements(driver, this);
+	}
+	
+	// utilization
+	public void register()
+	{
+		registerbtn.click();
+	}
+	public void Hoodiesandjackets()
+	{
+		Hoodies.click();
+		
+	}
+	public void Sweatshirt()
+	{
+		Sweatshirts.click();
+	}
+	public void referlink()
+	{
+		retandreflink.click();
+	}
+	public void FNtxtfield(String FN)
+	{
+		FirstnameTxtfield.sendKeys(FN);
+	}
+	public void topbtn()
+	{
+		tophome.click();
+	}
+	public void twitter()
+	{
+		twitter.click();
+	}
+	
+}

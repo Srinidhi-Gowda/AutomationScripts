@@ -1,0 +1,22 @@
+package firstGen;
+
+import java.sql.Driver;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.Test;
+
+public class ForSouledStore extends Generic
+{
+	@Test
+	public void test01()
+	{
+		driver.findElement(By.xpath("//img[@alt='Hoodies & Jackets']")).click();
+		driver.findElement(By.xpath("//span[.='Careers']")).click();
+		driver.findElement(By.xpath("//a[@aria-label='Twitter']")).click();
+		
+		
+	}
+}
